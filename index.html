@@ -5,16 +5,80 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="assets/img/logo/icone.ico" />
+    <!-- Bootstrap 5.0.1 CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Hello, world!</title>
+    <title>Acadêmia de Futebol</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary text-uppercase fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="http://ead.ifce.edu.br/">
+          <img src="assets/img/logo/logo_ifce.jpg" style='height: 90px; display: inline-block;'>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobre_ifce.html">Sobre o IFCE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="academia-futebol.html">Academia e Futebol</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="coordenacao.html">Coordenação</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contato.html">Contatos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="script/bootstrap.bundle.min.js"></script>
-    <script src="script/script.js"></script>
+    
+  <!-- Masthead-->
+  <header class="masthead bg-default text-black text-center">
+      <div class="container d-flex align-items-center flex-column">
+          <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/logo/academia_futebol.png" alt="" style='width: 400px' /><!-- Masthead Heading-->
+
+          <!-- Masthead Subheading-->
+          <div class="text-center mt-4">
+              <a class="btn btn-xl btn-primary" href="listagem.html"><i class="fas fa-edit mr-2"></i>Quero Estudar!</a>
+          </div>
+      </div>
+  </header>
+  
+  <!-- About Section-->
+  <section class="page-section bg-primary text-white mb-0" id="about">
+      <div class="container">
+          <!-- About Section Heading-->
+          <h2 class="page-section-heading text-center text-uppercase text-white">O que é?</h2>
+          <!-- Icon Divider-->
+          <div class="divider-custom divider-light">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+              <div class="divider-custom-line"></div>
+          </div>
+          <!-- About Section Content-->
+          <div class="row">
+              <div class="col-lg-4 ml-auto"><p class="lead">O FICemCasa é um projeto desenvolvido pelo Instituto Federal do Ceará com o objetivo de ofertar, principalmente, cursos de formação inicial e continuada, visando capacitar, aperfeiçoar e atualizar profissionais em todos os níveis de escolaridade, nas mais diversas áreas do conhecimento. Essa é mais uma forma que o IFCE encontrou de contribuir com a sociedade nesse momento de distanciamento social. Aproveite esse período e venha se capacitar com a gente. Os cursos são gratuitos e abertos à comunidade.</p></div>
+              <div class="col-lg-4 mr-auto"><p class="lead">Aproveite esse período de distanciamento social para se capacitar.</p></div>
+          </div>
+
+      </div>
+  </section>
+
+    <!-- Option 1: Bootstrap 5.0.1 -->
+    <script src="assets/script/bootstrap.bundle.min.js"></script>
+    <script src="assets/script/script.js"></script>
   </body>
 </html>
