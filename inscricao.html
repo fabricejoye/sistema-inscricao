@@ -27,7 +27,10 @@
 <link href="dist/css/sb-admin-2.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Wizard CSS-->
+<link href="assets/css/progress-wizard.min.css" rel="stylesheet" type="text/css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -74,280 +77,408 @@
             <div class="row">
 				<div class="col-lg-12">
 
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Dados do Aluno
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper">
-
-
-                                <!-- Row -->
-                                <div class="form-group col-lg-2">
-                                    <label for="nome">CPF*</label>
-                                    <input type="text" class="form-control" id="cpf" name='cpf' onblur="javascript:verifica_cpf(this.value)">
+                    <div class="wizard" id="wizard01">
+                        <ul class="progress-indicator">
+                            <li class="completed">
+                                <a href="#" class="wizard-link" data-step="0">
+                                    <span class="bubble"></span>
+                                    <i class="fa fa-check-circle"></i>
+                                    1. Identificação
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="wizard-link" data-step="1">
+                                    <span class="bubble"></span>
+                                    <i class="fa fa-check-circle"></i>
+                                    2. Dados pessoais
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="wizard-link" data-step="2">
+                                    <span class="bubble"></span>
+                                    <i class="fa fa-check-circle"></i>
+                                    3. Socio-economico
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="wizard-link" data-step="3">
+                                    <span class="bubble"></span>
+                                    <i class="fa fa-check-circle"></i>
+                                    4. Documentação
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="wizard-link" data-step="4">
+                                    <span class="bubble"></span>
+                                    <i class="fa fa-check-circle"></i>
+                                    5. Escolha o curso
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="wizard-link" data-step="5">
+                                    <span class="bubble"></span>
+                                    <i class="fa fa-check-circle"></i>
+                                    6. Finalizar
+                                </a>
+                            </li>
+                        </ul>
+                            <div class="wizard-itens">
+                                <!-- 1. Identificação -->
+                                <div class="wizard-item wizard-item-active">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            1. Identificação
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+                                            <div class="dataTable_wrapper">
+                
+                
+                                                <!-- Row -->
+                                                <div class="form-group col-lg-2">
+                                                    <label for="nome">CPF*</label>
+                                                    <input type="text" class="form-control" id="cpf" name='cpf' onblur="javascript:verifica_cpf(this.value)">
+                                                </div>
+                
+                                                <div class="form-group col-lg-8">
+                                                    <label for="nome">Nome*</label>
+                                                    <input type="text" class="form-control" id="nome" name='nome' value=''>
+                
+                                                </div>
+                
+                                                <div class="form-group col-lg-2">
+                                                    <label for="nome">Gênero*</label>
+                                                    <select class="form-control" id="sexo" name='sexo' >
+                                                        <option value="1">Masculino</option>
+                                                        <option value="2">Feminino</option>
+                                                    </select>
+                                                </div>
+                
+                                                <!-- Row -->
+                                                <div class="form-group col-lg-7">
+                                                    <label for="nome">Rua/Avenida*</label>
+                                                    <input type="text" class="form-control" id="endereco" name='endereco' value=''>
+                                                </div>
+                
+                                                <div class="form-group col-lg-2">
+                                                    <label for="nome">Número*</label>
+                                                    <input type="text" class="form-control" id="numero" name='numero' value=''>
+                                                </div>
+                
+                                                <div class="form-group col-lg-3">
+                                                    <label for="nome">Complemento</label>
+                                                    <input type="text" class="form-control" id="complemento" name='complemento' value=''>
+                                                </div>
+                
+                
+                                                <!-- Row -->
+                                                <div class="form-group col-lg-3">
+                                                    <label for="exampleInputEmail1">CEP*</label>
+                                                    <input type="text" class="form-control" name="cep" id="cep" onblur="javascript:pesquisacep(this.value);">
+                                                </div>
+                
+                                                <div class="form-group col-lg-6">
+                                                    <label for="nome">Cidade*</label>
+                                                    <input type="text" class="form-control" id="cidade" name='cidade' value=''>
+                                                </div>
+                
+                                                <div class="form-group col-lg-3">
+                                                    <label for="nome">UF*</label>
+                                                    <input type="text" class="form-control" id="uf" name='uf' value=''>
+                                                </div>
+                
+                
+                                                <!-- Row -->
+                                                <div class="form-group col-lg-12">
+                                                    <label for="nome">Nome da Mãe*</label>
+                                                    <input type="text" class="form-control" id="mae" name='mae' value=''>
+                                                </div>
+                
+                                                <!-- Row -->
+                                                <div class="form-group col-lg-12">
+                                                    <label for="nome">Nome do Pai</label>
+                                                    <input type="text" class="form-control" id="pai" name='pai' value=''>
+                                                </div>
+                
+                                                <!-- Row -->
+                                                <div class="form-group col-lg-3">
+                                                    <label for="exampleInputEmail1">Data Nascimento*</label>
+                                                    <input type="text" class="form-control" id="nascimento" name="nascimento" >
+                                                </div>
+                
+                
+                
+                                            </div>
+                                            <!-- /.table-responsive -->
+                
+                                        </div>
+                                        <!-- /.panel-body -->
+                
+                                    </div>
                                 </div>
 
-                                <div class="form-group col-lg-8">
-                                    <label for="nome">Nome*</label>
-                                    <input type="text" class="form-control" id="nome" name='nome' value=''>
-
+                                <!-- 2. Dados pessoais -->
+                                <div class="wizard-item">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            2. Dados pessoais
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+                                            <div class="dataTable_wrapper">
+                
+                                                <div class="form-group col-lg-12">
+                                                    <label for="nome">E-mail*</label>
+                                                    <input type="text" class="form-control" id="email" name='email' value=''>
+                                                </div>
+                
+                
+                                                <div class="form-group col-lg-6">
+                                                    <label for="exampleInputEmail1">Telefone</label>
+                                                    <input type="text" class="form-control" id="telefone" name='telefone'>
+                                                </div>
+                                                <div class="form-group col-lg-6">
+                                                    <label for="exampleInputEmail1">Celular*</label>
+                                                    <input type="text" class="form-control" id="celular" name='celular'>
+                                                </div>
+                
+                
+                                            </div>
+                                            <!-- /.table-responsive -->
+                
+                                        </div>
+                                        <!-- /.panel-body -->
+                
+                                    </div>
                                 </div>
 
-                                <div class="form-group col-lg-2">
-                                    <label for="nome">Gênero*</label>
-                                    <select class="form-control" id="sexo" name='sexo' >
-                                        <option value="1">Masculino</option>
-                                        <option value="2">Feminino</option>
-                                    </select>
+                                <!-- 3. Socio-economico -->
+                                <div class="wizard-item">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            3. Socio-economico
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+                                            <div class="dataTable_wrapper">
+                
+                                                <!-- Row -->
+                                                
+                                                <div class="form-group col-lg-6">
+                                                    <label for="nome">Renda Familiar*</label>
+                                                    <select class="form-control" id="renda" name='renda' >
+                                                        <option value="1">&lt; 1 Salário-Mínimo</option>
+                                                        <option value="2">De 1 a 2 Salários-Mínimos</option>
+                                                        <option value="3">De 2 a 5 Salários-Mínimos</option>
+                                                        <option value="4">&gt; 5 Salários-Mínimos</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-lg-6">
+                                                    <label for="nome">Formação*</label>
+                                                    <select name='formacao' id='formacao' class="form-control">
+                                                        <option value="1">Ensino Fundamental I (1º a 5º) - Incompleto</option>
+                                                        <option value="2">Ensino Fundamental I (1º a 5º) – Completo</option>
+                                                        <option value="3">Ensino Fundamental II (6º a 9º) – Incompleto</option>
+                                                        <option value="4">Ensino Fundamental II (6º a 9º) – Completo</option>
+                                                        <option value="5">Ensino Médio – Incompleto</option>
+                                                        <option value="6">Ensino Médio – Completo</option>
+                                                        <option value="7">Ensino Superior – Incompleto</option>
+                                                        <option value="8">Ensino Superior – Completo</option>
+                                                        <option value="8">Pós-graduação</option>
+                                                    </select>
+                                                </div>
+                
+                                                <!-- Row -->
+                                                <div class="form-group col-lg-3">
+                                                    <label for="nome">Você tem acesso a internet?*</label>
+                                                    <select name='internet' id='internet' class="form-control">
+                                                        <option value="0">Não</option>
+                                                        <option value="1">Sim</option>
+                                                    </select>
+                                                </div>
+                
+                                                <div class="form-group col-lg-3">
+                                                    <label for="nome">Onde você costuma acessar*</label>
+                                                    <select name='acesso' id='acesso' class="form-control">
+                                                        <option value="1">Casa</option>
+                                                        <option value="2">Trabalho</option>
+                                                        <option value="3">Faculdade</option>
+                                                        <option value="4">Escola</option>
+                                                        <option value="5">Lan house</option>
+                                                    </select>
+                                                </div>
+                
+                                                <div class="form-group col-lg-6">
+                                                    <label for="nome">Você dispõe de computador ou notebook para realizar o curso?*</label>
+                                                    <select name='computador' id='computador' class="form-control">
+                                                        <option value="0">Não</option>
+                                                        <option value="1">Sim</option>
+                                                    </select>
+                                                </div>
+                
+                                                <!-- Row -->
+                                                <div class="form-group col-lg-6">
+                                                    <label for="nome">Você tem experiência com a temática proposta no curso escolhido?*</label>
+                                                    <select name='tematica' id='tematica' class="form-control">
+                                                        <option value="0">Não</option>
+                                                        <option value="1">Sim</option>
+                                                    </select>
+                                                </div>
+                
+                                                <div class="form-group col-lg-6">
+                                                    <label for="nome">Você tem experiência com cursos a distância?*</label>
+                                                    <select name='ead' id='ead' class="form-control">
+                                                        <option value="0">Não</option>
+                                                        <option value="1">Sim</option>
+                                                    </select>
+                                                </div>
+                
+                                                <!-- Row -->
+                                                <div class="form-group col-lg-3">
+                                                    <label for="nome">É PCD?*</label>
+                                                    <select name='pcd' id='pcd' class="form-control">
+                                                        <option value="0">Não</option>
+                                                        <option value="1">Sim</option>
+                                                    </select>
+                                                </div>
+                
+                                                <div class="form-group col-lg-3">
+                                                    <label for="nome">Qual?</label>
+                                                    <select name='deficiencia' id='deficiencia' class="form-control" disabled>
+                                                        <option value="1">Motora</option>
+                                                        <option value="2">Auditiva</option>
+                                                        <option value="3">Visual</option>
+                                                        <option value="4">Intelectual</option>
+                                                    </select>
+                                                </div>
+                
+                                                <div class="form-group col-lg-3">
+                                                    <label for="nome">É aluno do IFCE?*</label>
+                                                    <select name='aluno' id='aluno' class="form-control">
+                                                        <option value="0">Não</option>
+                                                        <option value="1">Sim</option>
+                                                    </select>
+                                                </div>
+                
+                
+                                            </div>
+                                            <!-- /.table-responsive -->
+                
+                                        </div>
+                                        <!-- /.panel-body -->
+                
+                                    </div>
                                 </div>
 
-                                <!-- Row -->
-                                <div class="form-group col-lg-7">
-                                    <label for="nome">Rua/Avenida*</label>
-                                    <input type="text" class="form-control" id="endereco" name='endereco' value=''>
+                                <!-- 4. Documentação -->
+                                <div class="wizard-item">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            4. Documentação
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+                                            <div class="dataTable_wrapper">
+
+                                                <div class="form-group col-lg-12" style="margin-bottom: 10px;">
+                                                    <h3>Documento de Identificação com Foto</h3>
+                                                </div>
+                
+                                                <div class="form-group col-lg-6">
+                                                    <label for="nome">Frente*</label>
+                                                    <input type="file" name="arquivo_frente" id="arquivo_frente" accept="image/*">
+                                                </div>
+                
+                                                <div class="form-group col-lg-6 mb-6">
+                                                    <label for="nome">Verso*</label>
+                                                    <input type="file" name="arquivo_verso" id="arquivo_verso" accept="image/*">
+                                                </div>
+                                                <div class="form-group col-lg-12" style="margin-bottom: 10px; margin-top: 25px;">
+                                                    <h3>Comprovante de escolaridade</h3>
+                                                </div>
+                                                <div class="form-group col-lg-6 mb-6">
+                                                    <label for="nome">Frente*</label>
+                                                    <input type="file" name="arquivo_frente_escolaridade" id="arquivo_frente_escolaridade" accept="image/*">
+                                                </div>
+                
+                                                <div class="form-group col-lg-6 mb-6">
+                                                    <label for="nome">Verso*</label>
+                                                    <input type="file" name="arquivo_verso_escolaridade" id="arquivo_verso_escolaridade" accept="image/*">
+                                                </div>
+                
+                                            </div>
+                                            <!-- /.table-responsive -->
+                
+                                        </div>
+                                        <!-- /.panel-body -->
+                
+                                    </div>
                                 </div>
 
-                                <div class="form-group col-lg-2">
-                                    <label for="nome">Número*</label>
-                                    <input type="text" class="form-control" id="numero" name='numero' value=''>
+                                <!-- 5. Escolha o curso -->
+                                <div class="wizard-item">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            5. Escolha o curso
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+                                            <div class="dataTable_wrapper">
+
+                                                <div class="form-group col-lg-12" style="margin-bottom: 10px;">
+                                                    <h3>Escolha o curso</h3>
+                                                </div>
+                
+                                            </div>
+                                            <!-- /.table-responsive -->
+                
+                                        </div>
+                                        <!-- /.panel-body -->
+                
+                                    </div>
                                 </div>
 
-                                <div class="form-group col-lg-3">
-                                    <label for="nome">Complemento</label>
-                                    <input type="text" class="form-control" id="complemento" name='complemento' value=''>
+                                <!-- 6. Finalizar -->
+                                <div class="wizard-item">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            6. Finalizar
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+                                            <div class="dataTable_wrapper">
+
+                                                <div class="form-group col-lg-12" style="margin-bottom: 10px;">
+                                                    <h3>Finalizar</h3>
+                                                    <div class="text-center">
+                                                        <button type="button" class="btn btn-default" onClick="grava_dados()">Salvar</button>
+                                                        <button type="button" class="btn btn-default" onClick="javascript:location.href='lista_cursos.php'">Voltar</button>
+                                                    </div>
+                                                </div>
+                
+                                            </div>
+                                            <!-- /.table-responsive -->
+                
+                                        </div>
+                                        <!-- /.panel-body -->
+                
+                                    </div>
                                 </div>
-
-
-                                <!-- Row -->
-                                <div class="form-group col-lg-3">
-                                    <label for="exampleInputEmail1">CEP*</label>
-                                    <input type="text" class="form-control" name="cep" id="cep" onblur="javascript:pesquisacep(this.value);">
-                                </div>
-
-                                <div class="form-group col-lg-6">
-                                    <label for="nome">Cidade*</label>
-                                    <input type="text" class="form-control" id="cidade" name='cidade' value=''>
-                                </div>
-
-                                <div class="form-group col-lg-3">
-                                    <label for="nome">UF*</label>
-                                    <input type="text" class="form-control" id="uf" name='uf' value=''>
-                                </div>
-
-
-                                <!-- Row -->
-                                <div class="form-group col-lg-12">
-                                    <label for="nome">Nome da Mãe*</label>
-                                    <input type="text" class="form-control" id="mae" name='mae' value=''>
-                                </div>
-
-                                <!-- Row -->
-                                <div class="form-group col-lg-12">
-                                    <label for="nome">Nome do Pai</label>
-                                    <input type="text" class="form-control" id="pai" name='pai' value=''>
-                                </div>
-
-                                <!-- Row -->
-                                <div class="form-group col-lg-3">
-                                    <label for="exampleInputEmail1">Data Nascimento*</label>
-                                    <input type="text" class="form-control" id="nascimento" name="nascimento" >
-                                </div>
-
-
-
                             </div>
-                            <!-- /.table-responsive -->
-
-                        </div>
-                        <!-- /.panel-body -->
-
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Dados complementares
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper">
-
-                                <!-- Row -->
-                                
-                                <div class="form-group col-lg-6">
-                                    <label for="nome">Renda Familiar*</label>
-                                    <select class="form-control" id="renda" name='renda' >
-                                        <option value="1">&lt; 1 Salário-Mínimo</option>
-                                        <option value="2">De 1 a 2 Salários-Mínimos</option>
-                                        <option value="3">De 2 a 5 Salários-Mínimos</option>
-                                        <option value="4">&gt; 5 Salários-Mínimos</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label for="nome">Formação*</label>
-                                    <select name='formacao' id='formacao' class="form-control">
-                                        <option value="1">Ensino Fundamental I (1º a 5º) - Incompleto</option>
-                                        <option value="2">Ensino Fundamental I (1º a 5º) – Completo</option>
-                                        <option value="3">Ensino Fundamental II (6º a 9º) – Incompleto</option>
-                                        <option value="4">Ensino Fundamental II (6º a 9º) – Completo</option>
-                                        <option value="5">Ensino Médio – Incompleto</option>
-                                        <option value="6">Ensino Médio – Completo</option>
-                                        <option value="7">Ensino Superior – Incompleto</option>
-                                        <option value="8">Ensino Superior – Completo</option>
-                                        <option value="8">Pós-graduação</option>
-                                    </select>
-                                </div>
-
-                                <!-- Row -->
-                                <div class="form-group col-lg-3">
-                                    <label for="nome">Você tem acesso a internet?*</label>
-                                    <select name='internet' id='internet' class="form-control">
-                                        <option value="0">Não</option>
-                                        <option value="1">Sim</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group col-lg-3">
-                                    <label for="nome">Onde você costuma acessar*</label>
-                                    <select name='acesso' id='acesso' class="form-control">
-                                        <option value="1">Casa</option>
-                                        <option value="2">Trabalho</option>
-                                        <option value="3">Faculdade</option>
-                                        <option value="4">Escola</option>
-                                        <option value="5">Lan house</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group col-lg-6">
-                                    <label for="nome">Você dispõe de computador ou notebook para realizar o curso?*</label>
-                                    <select name='computador' id='computador' class="form-control">
-                                        <option value="0">Não</option>
-                                        <option value="1">Sim</option>
-                                    </select>
-                                </div>
-
-                                <!-- Row -->
-                                <div class="form-group col-lg-6">
-                                    <label for="nome">Você tem experiência com a temática proposta no curso escolhido?*</label>
-                                    <select name='tematica' id='tematica' class="form-control">
-                                        <option value="0">Não</option>
-                                        <option value="1">Sim</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group col-lg-6">
-                                    <label for="nome">Você tem experiência com cursos a distância?*</label>
-                                    <select name='ead' id='ead' class="form-control">
-                                        <option value="0">Não</option>
-                                        <option value="1">Sim</option>
-                                    </select>
-                                </div>
-
-                                <!-- Row -->
-                                <div class="form-group col-lg-3">
-                                    <label for="nome">É PCD?*</label>
-                                    <select name='pcd' id='pcd' class="form-control">
-                                        <option value="0">Não</option>
-                                        <option value="1">Sim</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group col-lg-3">
-                                    <label for="nome">Qual?</label>
-                                    <select name='deficiencia' id='deficiencia' class="form-control" disabled>
-                                        <option value="1">Motora</option>
-                                        <option value="2">Auditiva</option>
-                                        <option value="3">Visual</option>
-                                        <option value="4">Intelectual</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group col-lg-3">
-                                    <label for="nome">É aluno do IFCE?*</label>
-                                    <select name='aluno' id='aluno' class="form-control">
-                                        <option value="0">Não</option>
-                                        <option value="1">Sim</option>
-                                    </select>
-                                </div>
-
-
+                            <div class="text-center wizard-nav">
+                                <button type="button" class="btn btn-default prev" disabled>Precedente</button>
+                                <button type="button" class="btn btn-default next">Seguinte</button>
                             </div>
-                            <!-- /.table-responsive -->
-
-                        </div>
-                        <!-- /.panel-body -->
-
                     </div>
+                    
 
 
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Dados do Contato
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper">
-
-                                <div class="form-group col-lg-12">
-                                    <label for="nome">E-mail*</label>
-                                    <input type="text" class="form-control" id="email" name='email' value=''>
-                                </div>
-
-
-                                <div class="form-group col-lg-6">
-                                    <label for="exampleInputEmail1">Telefone</label>
-                                    <input type="text" class="form-control" id="telefone" name='telefone'>
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label for="exampleInputEmail1">Celular*</label>
-                                    <input type="text" class="form-control" id="celular" name='celular'>
-                                </div>
-
-
-                            </div>
-                            <!-- /.table-responsive -->
-
-                        </div>
-                        <!-- /.panel-body -->
-
-                    </div>
-
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Documentação
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper">
-
-                                <div class="form-group col-lg-6">
-                                    <label for="nome">Documento de Identificação com Foto (frente)*</label>
-                                    <input type="file" name="arquivo_frente" id="arquivo_frente" accept="image/*">
-                                </div>
-
-                                <div class="form-group col-lg-6">
-                                    <label for="nome">Documento de Identificação com Foto (verso)*</label>
-                                    <input type="file" name="arquivo_verso" id="arquivo_verso" accept="image/*">
-                                </div>
-
-                            </div>
-                            <!-- /.table-responsive -->
-
-                        </div>
-                        <!-- /.panel-body -->
-
-                    </div>
-
-
-                    <button type="button" class="btn btn-default" onClick="grava_dados()">Salvar</button>
-                    <button type="button" class="btn btn-default" onClick="javascript:location.href='lista_cursos.php'">Voltar</button>
+                    
+                    
+                    <br>
+                    <br>
                     </form>
-        <br>
-        <br>
+        
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
@@ -394,6 +525,79 @@
     </script>
 	<script>
 	$(function() {
+
+        // Wizard
+
+        /* Wizard Class */
+        class WizardEffect {
+            constructor(WizardEffectId) {
+                this.id = WizardEffectId;
+                this.list = $(".wizard-item",WizardEffectId);
+                this.buttonPrev = $(".wizard-nav button.prev",WizardEffectId);
+                this.buttonNext = $(".wizard-nav button.next",WizardEffectId);
+                this.total = this.list.length;
+                this.index = 0;
+            }
+            NavbarcheckState() {
+                console.log(this.buttonPrev);
+                console.log(this.buttonNext);
+                if (this.index == 0) {
+                    this.buttonPrev.attr("disabled", "disabled");
+                } else {
+                    this.buttonPrev.removeAttr("disabled");
+                }
+                if (this.index == this.total-1) {
+                    this.buttonNext.attr("disabled", "disabled");
+                } else {
+                    this.buttonNext.removeAttr("disabled");
+                }
+            }
+            goTo(indexStep) {
+                // Go to a specific step
+                this.list.eq(this.index).removeClass("wizard-item-active");
+                this.list.eq(indexStep).addClass("wizard-item-active");
+                if (this.index < indexStep) {
+                    for (var i = this.index+1; i < indexStep+1; i++) {
+                        $(".progress-indicator li").eq(i).addClass("completed");
+                    }
+                }
+                if (this.index > indexStep) {
+                    for (var i = indexStep+1; i < this.index+1; i++) {
+                        $(".progress-indicator li").eq(i).removeClass("completed");
+                    }
+                }
+                this.index = indexStep;
+                wizard1.NavbarcheckState();
+            }
+        }
+
+
+        var wizard1 = new WizardEffect("#wizard01");
+        var wizardList = [ wizard1 ];
+
+        $( ".progress-indicator" ).on( "click", "a.wizard-link", function( event ) {
+            
+            event.preventDefault();
+            let indexStep  = $(this).data("step");
+            wizard1.goTo(indexStep);
+        });
+
+        $( ".wizard-nav" ).on( "click", "button", function( event ) {
+            
+            event.preventDefault();
+            let stepActive = wizard1.index;
+            let stepNew;
+            if ($(this).hasClass("next")) {
+                stepNew = stepActive+1;
+                $( ".progress-indicator" ).find("a.wizard-link").eq(stepNew).click();
+                wizard1.NavbarcheckState();
+            }
+            if ($(this).hasClass("prev")) {
+                stepNew = stepActive-1;
+                $( ".progress-indicator" ).find("a.wizard-link").eq(stepNew).click();
+                wizard1.NavbarcheckState();
+            }
+        });
 
     // Exibir tipos de deficiência se pcd=true
     $( "#pcd" ).change(function() {
