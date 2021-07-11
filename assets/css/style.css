@@ -6700,7 +6700,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-    background-color: #30833A !important;
+    background-color: #B5C99A !important;
 }
 
 a.bg-primary:hover,
@@ -6711,7 +6711,7 @@ button.bg-primary:focus {
 }
 
 .bg-secondary {
-    background-color: #2A4885 !important;
+    background-color: #008E9C !important;
 }
 
 a.bg-secondary:hover,
@@ -10112,11 +10112,11 @@ a.text-dark:focus {
 }
 
 .divider-custom.divider-light .divider-custom-line {
-    background-color: #fff;
+    background-color: #000;
 }
 
 .divider-custom.divider-light .divider-custom-icon {
-    color: #fff !important;
+    color: #000 !important;
 }
 
 .btn-xl {
@@ -10168,16 +10168,16 @@ a.text-dark:focus {
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-    color: #F7D413;
+    color: #FFCC29;
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:active,
 #mainNav .navbar-nav li.nav-item a.nav-link:focus {
-    color: #F7D413;
+    color: #FFCC29;
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
-    color: #F7D413;
+    color: #FFCC29;
 }
 
 #mainNav .navbar-toggler {
@@ -10200,13 +10200,13 @@ a.text-dark:focus {
     }
     #mainNav .navbar-nav>li.nav-item>a.nav-link.active {
         color: #fff;
-        background: #F7D413;
+        background: #FFCC29;
     }
     #mainNav .navbar-nav>li.nav-item>a.nav-link.active:active,
     #mainNav .navbar-nav>li.nav-item>a.nav-link.active:focus,
     #mainNav .navbar-nav>li.nav-item>a.nav-link.active:hover {
         color: #fff;
-        background: #F7D413;
+        background: #FFCC29;
     }
     #mainNav.navbar-shrink {
         padding-top: 0.5rem;
